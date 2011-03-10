@@ -2,8 +2,10 @@
 /**
  * Redisko class
  *
+ * @uses	   PHPRedis
  * @author     Dmitri Ahmarov
  * @copyright  (c) 2011 Dmitri Ahmarov
+ * @license    MIT
  */
 class Kohana_Redisko extends Redis {
 
