@@ -2,7 +2,7 @@
 /**
  * Redisko class
  *
- * @uses	   PHPRedis
+ * @uses       PHPRedis
  * @author     Dmitri Ahmarov
  * @copyright  (c) 2011 Dmitri Ahmarov
  * @license    MIT
@@ -82,12 +82,12 @@ class Kohana_Redisko extends Redis {
 			$this->_port = (int) $config['port'];
 		}
 
-		if (isset($config['prefix']))
+		if (isset($config['prefix']) && NULL !== $config['prefix'])
 		{
 			$this->_prefix = (string) $config['prefix'];
 		}
 
-		if (isset($config['serializer']))
+		if (isset($config['serializer']) && NULL !== $config['serializer'])
 		{
 			$this->_serializer = $config['serializer'];
 		}
@@ -105,6 +105,6 @@ class Kohana_Redisko extends Redis {
 		}
 
 		// Set serializer engine
-		$this->setOption(Redis::OPT_SERIALIZER, Redis::SERIALIZER_IGBINARY);
+		$this->setOption(Redis::OPT_SERIALIZER, $this->_serializer);
 	}
 } // End Kohana_Redisko
