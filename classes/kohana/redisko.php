@@ -38,7 +38,7 @@ class Kohana_Redisko extends Redis {
 		if ( ! isset(Redisko::$instances[$server]))
 		{
 			// Load the configuration for this type
-			$config = Kohana::config('redisko')->get($server);
+			$config = Kohana::$config->load('redisko')->get($server);
 
 			// Create a new session instance
 			Redisko::$instances[$server] = new Redisko($config);
